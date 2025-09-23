@@ -89,4 +89,14 @@ Fréchet Inception Distance (FID) of the **MAISI-v2** baseline and **NoMAISI** m
 **Comparison of Fréchet Inception Distance (FID) between real↔real and AI-generated CT datasets.**   Each point represents a clinical dataset (**LNDbv4, NSCLC-R, LIDC-IDRI, DLCS24, Intgmultiomics, LUNA25**) under different generative models (**MAISI-V2, NoMAISI**).The x-axis shows the **median FID** computed between real datasets, while the y-axis shows the **FID of AI-generated data** compared to real.  
 The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity would match real↔real fidelity.
 
+### 🖼️ Example Results
 
+<p align="center">
+  <img src="https://github.com/fitushar/NoMAISI/tree/main/doc/images/DLCS_1419_ann0_slice134_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="500">
+</p>
+
+*Figure X.* **Comparison of CT generation from anatomical masks.**  
+- **Left:** Input organ/body segmentation mask.  
+- **Middle:** Generated CT slice using **MAISI-V2**.  
+- **Right:** Generated CT slice using **NoMAISI (ours)**.  
+Yellow boxes highlight lung nodule regions for comparison.
