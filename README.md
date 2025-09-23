@@ -32,7 +32,7 @@ Medical imaging datasets are increasingly available, yet abnormal and annotation
 The overall pipeline for organ, body, and nodule segmentation with alignment is shown below:
 
 <p align="center">
-  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/workflow.png" alt="Segmentation Pipeline" width="750"/>
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/workflow.png" alt="Segmentation Pipeline"/>
 </p>
 
 **Figure:** Workflow for constructing the MAISI-V2+ development dataset. The pipeline includes **(1)** organ segmentation using AI models, **(2)** body segmentation with algorithmic methods, **(3)** nodule segmentation through AI-assisted and ML-based refinement, and **(4)** segmentation alignment to integrate organs, body, and nodules segmentations into anatomically consistent volumes.
