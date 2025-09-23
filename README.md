@@ -92,7 +92,7 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
 ### 🖼️ Example Results
 
 <p align="center">
-  <img src="https://github.com/fitushar/NoMAISI/tree/main/doc/images/DLCS_1419_ann0_slice134_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="500">
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1419_ann0_slice134_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
 </p>
 
 *Figure X.* **Comparison of CT generation from anatomical masks.**  
