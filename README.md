@@ -26,3 +26,49 @@ NoMAISI (Nodule-Oriented Medical AI for Synthetic Imaging), a generative framewo
 
 # Abstract
 Medical imaging datasets are increasingly available, yet abnormal and annotation-intensive cases such as lung nodules remain underrepresented. We developed NoMAISI (Nodule-Oriented Medical AI for Synthetic Imaging), a generative framework built on foundational backbones with flow-based diffusion and ControlNet conditioning. Using NoMAISI, we curated a large multi-cohort lung nodule dataset and applied context-aware nodule volume augmentation, including relocation, shrinkage to simulate early-stage disease, and expansion to model progression. Each case was rendered into multiple synthetic variants, producing a diverse and anatomically consistent dataset. Fidelity was evaluated with cross-cohort similarity metrics, and downstream integration into lung nodule detection, and classification tasks demonstrated improved external test performance, particularly in underrepresented lesion categories. These results show that nodule-oriented synthetic imaging and curated augmentation can complement clinical data, reduce annotation demands, and expand the availability of training resources for healthcare AI.
+
+## 🧩 Workflow Overview
+
+The overall pipeline for organ, body, and nodule segmentation with alignment is shown below:
+
+<p align="center">
+  <img src="docs/images/segmentation_pipeline.png" alt="Segmentation Pipeline" width="750"/>
+</p>
+
+**Figure:** Multi-stage segmentation framework.  
+1. **Organ Segmentation** – AI-based extraction of lung and thoracic organs.  
+2. **Body Segmentation** – Algorithmic segmentation of the body contour.  
+3. **Nodule Segmentation** – AI/ML-based detection and segmentation of nodules.  
+4. **Segmentation Alignment** – Integration of organ, body, and nodule masks into a unified representation.  
+
+
+
+## 📊 Dataset Composition
+
+The table below summarizes the datasets included in this project, with their split sizes (Patients, CT scans, and Nodules) and the annotation types available.  
+
+| Dataset          | Patients <br>n (%) | CT Scans <br>n (%) | Nodules <br>n (%) | Organ Seg | Nodule Seg | Nodule CCC | Nodule Box |
+|------------------|---------------------|---------------------|-------------------|-----------|------------|------------|------------|
+| **LNDbv4**       | 223 (3.17)          | 223 (2.52)          | 1132 (7.84)       | ✗         | ✓          | ✗          | ✓          |
+| **NSCLC-R**      | 415 (5.89)          | 415 (4.69)          | 415 (2.87)        | ✗         | ✓          | ✗          | ✓          |
+| **LIDC-IDRI**    | 870 (12.35)         | 870 (9.84)          | 2584 (17.89)      | ✗         | ✓          | ✓          | ✓          |
+| **DLCS-24**      | 1605 (22.79)        | 1605 (18.15)        | 2478 (17.16)      | ✗         | ✓          | ✗          | ✓          |
+| **Intgmultiomics** | 1936 (27.49)       | 1936 (21.90)        | 1936 (13.40)      | ✗         | ✓          | ✗          | ✗          |
+| **LUNA-25**      | 1993 (28.30)        | 3792 (42.89)        | 5899 (40.84)      | ✗         | ✓          | ✗          | ✓          |
+| **TOTAL**        | 7042 (100)          | 8841 (100)          | 14444 (100)       | —         | —          | —          | —          |
+
+---
+
+**Notes**  
+- Percentages indicate proportion relative to the total for each column.  
+- ✔︎ = annotation available, ✗ = annotation not available.  
+- “Nodule CCC” = nodule center coordinates.  
+- “Nodule Box” = bounding-box annotations.
+- 
+📚 Dataset citations References
+* LNDbv4 : [https://zenodo.org/records/8348419](https://zenodo.org/records/8348419)
+* NSCLC-Radiomics : [https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/](https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/)
+* LIDC-IDRI: [https://ieee-dataport.org/documents/lung-image-database-consortium-image-collection-lidc-idri](https://ieee-dataport.org/documents/lung-image-database-consortium-image-collection-lidc-idri)
+* DLCS24: [https://zenodo.org/records/13799069](https://zenodo.org/records/13799069)
+* Intgmultiomics: [M Zhao et. al, Nat.Commun(2025).](https://www.nature.com/articles/s41467-024-55594-z#citeas)
+* LUNA25: [https://luna25.grand-challenge.org/](https://luna25.grand-challenge.org/)
