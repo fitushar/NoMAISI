@@ -14,8 +14,6 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.8.0-orange.svg)](https://pytorch.org)
 [![MONAI](https://img.shields.io/badge/MONAI-1.4.0-blue.svg)](https://monai.io)
 
-  
-
 </div>
 
 
@@ -55,13 +53,11 @@ The table below summarizes the datasets included in this project, with their spl
 | **TOTAL**        | 7042 (100)          | 8841 (100)          | 14444 (100)       | —         | —          | —          | —          |
 
 ---
-
 **Notes**  
 - Percentages indicate proportion relative to the total for each column.  
 - ✔︎ = annotation available, ✗ = annotation not available.  
 - “Nodule CCC” = nodule center coordinates.  
 - “Nodule Box” = bounding-box annotations.
-- 
 📚 Dataset citations References
 * LNDbv4 : [https://zenodo.org/records/8348419](https://zenodo.org/records/8348419)
 * NSCLC-Radiomics : [https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/](https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/)
