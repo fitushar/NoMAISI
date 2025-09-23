@@ -1,4 +1,4 @@
-# NoMAISI 
+# NoMAISI: Nodule-Oriented Medical AI for Synthetic Imaging
 
 <div align="center">
 <p align="center">
@@ -17,11 +17,6 @@
 </div>
 
 
-# NoMAISI: Nodule-Oriented Medical AI for Synthetic Imaging and Augmentation in Chest CT
-NoMAISI (Nodule-Oriented Medical AI for Synthetic Imaging), a generative framework built on foundational backbones with flow-based diffusion and ControlNet conditioning.
-
-
-
 # Abstract
 Medical imaging datasets are increasingly available, yet abnormal and annotation-intensive cases such as lung nodules remain underrepresented. We developed NoMAISI (Nodule-Oriented Medical AI for Synthetic Imaging), a generative framework built on foundational backbones with flow-based diffusion and ControlNet conditioning. Using NoMAISI, we curated a large multi-cohort lung nodule dataset and applied context-aware nodule volume augmentation, including relocation, shrinkage to simulate early-stage disease, and expansion to model progression. Each case was rendered into multiple synthetic variants, producing a diverse and anatomically consistent dataset. Fidelity was evaluated with cross-cohort similarity metrics, and downstream integration into lung nodule detection, and classification tasks demonstrated improved external test performance, particularly in underrepresented lesion categories. These results show that nodule-oriented synthetic imaging and curated augmentation can complement clinical data, reduce annotation demands, and expand the availability of training resources for healthcare AI.
 
@@ -33,7 +28,7 @@ The overall pipeline for organ, body, and nodule segmentation with alignment is 
   <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/workflow.png" alt="Segmentation Pipeline"/>
 </p>
 
-**Figure:** Workflow for constructing the MAISI-V2+ development dataset. The pipeline includes **(1)** organ segmentation using AI models, **(2)** body segmentation with algorithmic methods, **(3)** nodule segmentation through AI-assisted and ML-based refinement, and **(4)** segmentation alignment to integrate organs, body, and nodules segmentations into anatomically consistent volumes.
+**Workflow** for constructing the **NoMAISI** development dataset. The pipeline includes **(1)** organ segmentation using AI models, **(2)** body segmentation with algorithmic methods, **(3)** nodule segmentation through AI-assisted and ML-based refinement, and **(4)** segmentation alignment to integrate organs, body, and nodules segmentations into anatomically consistent volumes.
 
 
 
@@ -58,10 +53,28 @@ The table below summarizes the datasets included in this project, with their spl
 - ✔︎ = annotation available, ✗ = annotation not available.  
 - “Nodule CCC” = nodule center coordinates.  
 - “Nodule Box” = bounding-box annotations.
-📚 Dataset citations References
+
+### 📚 Dataset citations References
 * LNDbv4 : [https://zenodo.org/records/8348419](https://zenodo.org/records/8348419)
 * NSCLC-Radiomics : [https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/](https://www.cancerimagingarchive.net/collection/nsclc-radiogenomics/)
 * LIDC-IDRI: [https://ieee-dataport.org/documents/lung-image-database-consortium-image-collection-lidc-idri](https://ieee-dataport.org/documents/lung-image-database-consortium-image-collection-lidc-idri)
 * DLCS24: [https://zenodo.org/records/13799069](https://zenodo.org/records/13799069)
 * Intgmultiomics: [M Zhao et. al, Nat.Commun(2025).](https://www.nature.com/articles/s41467-024-55594-z#citeas)
 * LUNA25: [https://luna25.grand-challenge.org/](https://luna25.grand-challenge.org/)
+
+
+## 📉 Fréchet Inception Distance (FID) Results
+
+Lower is better.  
+
+| **FID (Avg.)**    | **LNDbv4** | **NSCLC-R** | **LIDC-IDRI** | **DLCS-24** | **Intgmultiomics** | **LUNA-25** |
+|-------------------|------------|-------------|---------------|-------------|--------------------|-------------|
+| **Real** LNDbv4        |   —    | 5.13 | 1.49 | 1.05 | 2.40 | 1.98 |
+| **Real** NSCLC-R       | 5.13   |   —   | 3.12 | 3.66 | 1.56 | 2.65 |
+| **Real** LIDC-IDRI     | 1.49   | 3.12 |   —   | 0.79 | 1.44 | 0.75 |
+| **Real** DLCS-24       | 1.05   | 3.66 | 0.79 |   —   | 1.56 | 1.00 |
+| **Real** Intgmultiomics| 2.40   | 1.56 | 1.44 | 1.56 |   —   | 1.57 |
+| **Real** LUNA-25       | 1.98   | 2.65 | 0.75 | 1.00 | 1.57 |   —   |
+| **AI-Generated** MAISI-V2 | 3.15 | 5.21 | 2.70 | 2.32 | 2.82 | 1.69 |
+| **AI-Generated** NoMAISI (ours) | 2.99 | 3.05 | 2.31 | 2.27 | 2.62 | 1.18 |
+
