@@ -2,7 +2,7 @@
 
 <div align="center">
 <p align="center">
-  <img src="assets/PiNS_logo.png" alt="PiNS Logo" width="500">
+  <img src="NoMAISI_logo.png" alt="PiNS Logo" width="500">
 </p>
 
 **Nodule-Oriented Medical AI for Synthetic Imaging and Augmentation in Chest CT**
@@ -14,7 +14,7 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.8.0-orange.svg)](https://pytorch.org)
 [![MONAI](https://img.shields.io/badge/MONAI-1.4.0-blue.svg)](https://monai.io)
 
-[🚀 Quick Start](#quick-start) • [📖 Documentation](https://github.com/fitushar/PiNS/blob/main/docs/TECHNICAL_DOCUMENTATION.md) • [💻 GitHub](https://github.com/fitushar/PiNS) 🤗 [Hugging Face](https://huggingface.co/ft42/PiNS) • [🐳 Docker Hub](https://hub.docker.com/r/ft42/pins)  
+  
 
 </div>
 
