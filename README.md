@@ -1,3 +1,24 @@
+# NoMAISI 
+
+<div align="center">
+<p align="center">
+  <img src="assets/PiNS_logo.png" alt="PiNS Logo" width="500">
+</p>
+
+**Nodule-Oriented Medical AI for Synthetic Imaging and Augmentation in Chest CT**
+
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Docker](https://img.shields.io/badge/Docker-ft42%2Fpins%3Alatest-2496ED?logo=docker)](https://hub.docker.com/r/ft42/pins)
+[![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://python.org)
+[![Medical Imaging](https://img.shields.io/badge/Medical-Imaging-red.svg)](https://simpleitk.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.8.0-orange.svg)](https://pytorch.org)
+[![MONAI](https://img.shields.io/badge/MONAI-1.4.0-blue.svg)](https://monai.io)
+
+[🚀 Quick Start](#quick-start) • [📖 Documentation](https://github.com/fitushar/PiNS/blob/main/docs/TECHNICAL_DOCUMENTATION.md) • [💻 GitHub](https://github.com/fitushar/PiNS) 🤗 [Hugging Face](https://huggingface.co/ft42/PiNS) • [🐳 Docker Hub](https://hub.docker.com/r/ft42/pins)  
+
+</div>
+
+
 # NoMAISI: Nodule-Oriented Medical AI for Synthetic Imaging and Augmentation in Chest CT
 NoMAISI (Nodule-Oriented Medical AI for Synthetic Imaging), a generative framework built on foundational backbones with flow-based diffusion and ControlNet conditioning.
 
