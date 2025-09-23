@@ -62,10 +62,11 @@ The table below summarizes the datasets included in this project, with their spl
 * Intgmultiomics: [M Zhao et. al, Nat.Commun(2025).](https://www.nature.com/articles/s41467-024-55594-z#citeas)
 * LUNA25: [https://luna25.grand-challenge.org/](https://luna25.grand-challenge.org/)
 
+# AI-Generated CT Evaluations 
 
-## 📉 Fréchet Inception Distance (FID) Results
+### 📉 Fréchet Inception Distance (FID) Results
 
-Lower is better.  
+Fréchet Inception Distance (FID) of the **MAISI-v2** baseline and **NoMAISI** models with multiple public clinical datasets (test dataset) as the references (Lower is better).
 
 | **FID (Avg.)**    | **LNDbv4** | **NSCLC-R** | **LIDC-IDRI** | **DLCS-24** | **Intgmultiomics** | **LUNA-25** |
 |-------------------|------------|-------------|---------------|-------------|--------------------|-------------|
@@ -77,4 +78,15 @@ Lower is better.
 | **Real** LUNA-25       | 1.98   | 2.65 | 0.75 | 1.00 | 1.57 |   —   |
 | **AI-Generated** MAISI-V2 | 3.15 | 5.21 | 2.70 | 2.32 | 2.82 | 1.69 |
 | **AI-Generated** NoMAISI (ours) | 2.99 | 3.05 | 2.31 | 2.27 | 2.62 | 1.18 |
+
+
+### 📉 FID Parity Plot
+
+<p align="left">
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/GanAI_fid_scatter_marker_legend.png" alt="Parity comparison of FID for real↔real vs AI-generated CT across datasets" width="500">
+</p>
+
+**Comparison of Fréchet Inception Distance (FID) between real↔real and AI-generated CT datasets.**   Each point represents a clinical dataset (**LNDbv4, NSCLC-R, LIDC-IDRI, DLCS24, Intgmultiomics, LUNA25**) under different generative models (**MAISI-V2, NoMAISI**).The x-axis shows the **median FID** computed between real datasets, while the y-axis shows the **FID of AI-generated data** compared to real.  
+The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity would match real↔real fidelity.
+
 
