@@ -110,6 +110,45 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
   <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1453_ann0_slice204_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
 </p>
 
+
+# Downstream Task:
+
+* **Cancer vs. No-Cancer Classification**
+* **Nodule Detection** ![Coming Soon](https://img.shields.io/badge/Status-Coming%20Soon-orange).
+* **Nodule Segmentation** ![Coming Soon](https://img.shields.io/badge/Status-Coming%20Soon-orange).
+
+---
+
+
+---
+
+## 🔬 Downstream Task: Cancer vs. No-Cancer Classification
+
+![Cancer/No-Cancer Classification Results](docs/figs/TaskCls.png)
+
+**What’s shown.** AUC vs. the **% of clinical data retained**  
+(x-axis: **100%**, **50%**, **20%**, **10%**).
+
+**Curves (additive augmentation — we **add** AI-generated nodules; we never replace clinical samples):**
+- **Clinical (LUNA25)** — baseline using only the retained clinical data.
+- **Clinical + AI-gen. (n%)** — at each point, add AI-generated data equal to the **same percentage as the retained clinical fraction**.  
+  *Examples:* at **50% clinical → +50% AI-gen**; **20% → +20%**; **10% → +10%**.
+- **Clinical + AI-gen. (100%)** — at each point, add AI-generated data equal to **100% of the full clinical dataset size**, regardless of the retained fraction.  
+  *Example:* at **10% clinical → +100% AI-gen**.
+
+### ✅ Key Takeaways
+- **AI-generated nodules improve data-efficiency:** at **low clinical fractions (50%→10%)**, *Clinical + AI-gen. (n%)* typically **matches or exceeds** clinical-only AUC.
+- **Bigger synthetic boosts (100%)** can help in some regimes but may underperform the matched *n%* mix depending on cohort → **ratio-balanced augmentation** is often safer.
+- Trends **generalize to external cohorts**, indicating **robustness** beyond the development data.
+
+### Notes
+- “**n%**” and “**100%**” refer to the **amount of AI-generated data added**, expressed as a percentage of the **full clinical dataset size**.
+- This is **augmentation, not replacement**: no clinical samples are removed when adding AI-generated data.
+
+
+
+
+
 # Acknowledgements
 
 We gratefully acknowledge the open-source projects that directly informed this repository: the [MAISI tutorial](https://github.com/Project-MONAI/tutorials/tree/main/generation/maisi) from the Project MONAI tutorials, the broader [Project MONAI ecosystem](https://github.com/Project-MONAI),
