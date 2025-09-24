@@ -90,13 +90,18 @@ Fréchet Inception Distance (FID) of the **MAISI-v2** baseline and **NoMAISI** m
 The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity would match real↔real fidelity.
 
 ### 🖼️ Example Results
+**Comparison of CT generation from anatomical masks.**  
+- **Left:** Input organ/body segmentation mask.  
+- **Middle:** Generated CT slice using **MAISI-V2**.  
+- **Right:** Generated CT slice using **NoMAISI (ours)**.  
+- **Yellow boxes** highlight lung nodule regions for comparison.
 
 <p align="center">
   <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1419_ann0_slice134_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
 </p>
-
-*Figure X.* **Comparison of CT generation from anatomical masks.**  
-- **Left:** Input organ/body segmentation mask.  
-- **Middle:** Generated CT slice using **MAISI-V2**.  
-- **Right:** Generated CT slice using **NoMAISI (ours)**.  
-Yellow boxes highlight lung nodule regions for comparison.
+<p align="center">
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1508_ann0_slice46_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
+</p>
+<p align="center">
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1453_ann0_slice204_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
+</p>
