@@ -1,0 +1,32 @@
+{
+    "name": "NoMAISI_DLCSD24_demo_512xy_256z_771p25m",
+    "numTest": 1,
+    "testing": [
+        {
+            
+            "label": "DLCS_1419_seg_sh.nii.gz",
+            "fold": 0,
+            "dim": [
+                512,
+                512,
+                256
+            ],
+            "spacing": [
+                0.703125,
+                0.703125,
+                1.25
+            ],
+            "top_region_index": [
+                0,
+                1,
+                0,
+                0
+            ],
+            "bottom_region_index": [
+                0,
+                0,
+                1,
+                0
+            ]
+        }]
+}

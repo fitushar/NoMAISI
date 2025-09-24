@@ -1,0 +1,18 @@
+Job starting
+GPUs Given:   0
+[2025-09-24 13:42:58.511][ INFO](maisi.controlnet.infer) - Number of GPUs: 1
+[2025-09-24 13:42:58.512][ INFO](maisi.controlnet.infer) - World_size: 1
+[2025-09-24 13:42:59.541][ INFO](maisi.controlnet.infer) - Load trained diffusion model from ./models/autoencoder.pt.
+[2025-09-24 13:43:03.285][ INFO](maisi.controlnet.infer) - Load trained diffusion model from ./models/diffusion_unet.pt.
+[2025-09-24 13:43:03.287][ INFO](maisi.controlnet.infer) - loaded scale_factor from diffusion model ckpt -> 1.0311251878738403.
+2025-09-24 13:43:03,824 - INFO - 'dst' model updated: 180 of 231 variables.
+[2025-09-24 13:43:04.077][ INFO](maisi.controlnet.infer) - load trained controlnet model from ./models/Experiments_NoMAISI_512xy_256z_771p25m_finetune_500epoch_best.pt
+[2025-09-24 13:43:07.130][ INFO](root) - `controllable_anatomy_size` is not provided.
+[2025-09-24 13:43:07.133][ INFO](root) - ---- Start generating latent features... ----
+  0%|          | 0/30 [00:00<?, ?it/s]  3%|▎         | 1/30 [00:00<00:23,  1.22it/s]  7%|▋         | 2/30 [00:01<00:14,  1.93it/s] 10%|█         | 3/30 [00:01<00:12,  2.17it/s] 13%|█▎        | 4/30 [00:01<00:11,  2.30it/s] 17%|█▋        | 5/30 [00:02<00:10,  2.39it/s] 20%|██        | 6/30 [00:02<00:09,  2.44it/s] 23%|██▎       | 7/30 [00:03<00:09,  2.47it/s] 27%|██▋       | 8/30 [00:03<00:08,  2.49it/s] 30%|███       | 9/30 [00:03<00:08,  2.51it/s] 33%|███▎      | 10/30 [00:04<00:07,  2.52it/s] 37%|███▋      | 11/30 [00:04<00:07,  2.53it/s] 40%|████      | 12/30 [00:05<00:07,  2.53it/s] 43%|████▎     | 13/30 [00:05<00:06,  2.53it/s] 47%|████▋     | 14/30 [00:05<00:06,  2.54it/s] 50%|█████     | 15/30 [00:06<00:05,  2.54it/s] 53%|█████▎    | 16/30 [00:06<00:05,  2.54it/s] 57%|█████▋    | 17/30 [00:07<00:05,  2.54it/s] 60%|██████    | 18/30 [00:07<00:04,  2.54it/s] 63%|██████▎   | 19/30 [00:07<00:04,  2.54it/s] 67%|██████▋   | 20/30 [00:08<00:03,  2.54it/s] 70%|███████   | 21/30 [00:08<00:03,  2.54it/s] 73%|███████▎  | 22/30 [00:08<00:03,  2.54it/s] 77%|███████▋  | 23/30 [00:09<00:02,  2.53it/s] 80%|████████  | 24/30 [00:09<00:02,  2.54it/s] 83%|████████▎ | 25/30 [00:10<00:01,  2.53it/s] 87%|████████▋ | 26/30 [00:10<00:01,  2.53it/s] 90%|█████████ | 27/30 [00:10<00:01,  2.53it/s] 93%|█████████▎| 28/30 [00:11<00:00,  2.53it/s] 97%|█████████▋| 29/30 [00:11<00:00,  2.53it/s]100%|██████████| 30/30 [00:12<00:00,  2.53it/s]100%|██████████| 30/30 [00:12<00:00,  2.47it/s]
+[2025-09-24 13:43:19.446][ INFO](root) - ---- DM/ControlNet Latent features generation time: 12.313125371932983 seconds ----
+[2025-09-24 13:43:20.016][ INFO](root) - ---- Start decoding latent features into images... ----
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:04<00:13,  4.36s/it] 50%|█████     | 2/4 [00:08<00:07,  4.00s/it] 75%|███████▌  | 3/4 [00:11<00:03,  3.79s/it]100%|██████████| 4/4 [00:15<00:00,  3.67s/it]100%|██████████| 4/4 [00:15<00:00,  3.78s/it]
+[2025-09-24 13:43:35.252][ INFO](root) - ---- Image VAE decoding time: 15.23531699180603 seconds ----
+2025-09-24 13:43:37,053 INFO image_writer.py:197 - writing: outputs/NoMAISI_DLCSD24_demo_512xy_256z_771p25m/DLCS_1419_seg_sh_image.nii.gz
+2025-09-24 13:43:41,437 INFO image_writer.py:197 - writing: outputs/NoMAISI_DLCSD24_demo_512xy_256z_771p25m/DLCS_1419_seg_sh_label.nii.gz

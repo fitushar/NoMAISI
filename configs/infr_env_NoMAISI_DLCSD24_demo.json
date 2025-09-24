@@ -1,0 +1,11 @@
+{
+    "model_dir": "./models/",
+    "output_dir": "./outputs/NoMAISI_DLCSD24_demo_512xy_256z_771p25m",
+    "tfevent_path": "./outputs/tfevent",
+    "trained_autoencoder_path": "./models/autoencoder.pt",
+    "trained_diffusion_path": "./models/diffusion_unet.pt",
+    "trained_controlnet_path": "./models/Experiments_NoMAISI_512xy_256z_771p25m_finetune_500epoch_best.pt",
+    "exp_name": "NoMAISI_DLCSD24_demo_512xy_256z_771p25m",
+    "data_base_dir": ["/home/ft42/NoMAISI/data"],
+    "json_data_list": ["/home/ft42/NoMAISI/data/infr_NoMAISI_DLCSD24_demo_512xy_256z_771p25m_dataset.json"]
+}

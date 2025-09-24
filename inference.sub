@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#SBATCH --job-name=nomaisi
+#SBATCH --mail-type=END,FAIL    
+#SBATCH --mail-user=ft42@duke.edu
+#SBATCH -p vram48
+#SBATCH --ntasks=1  # 
+#SBATCH --gpus=1    # 2 GPU per task, chose more if model is capable of multi gpu training
+#SBATCH --cpus-per-task=16 # More if it is CPU intensive job too NNUNET demands lot of CPU
+
+## Make sure logs directory is present on current directory (same as this script)
+#SBATCH --output=logs/NoMAISI-infr-log-%j.out
+#SBATCH --error=logs/NoMAISI-infr-log-%j.out
+
+
+
+echo "Job starting"
+echo "GPUs Given:   $CUDA_VISIBLE_DEVICES"
+module load miniconda/py39_4.12.0
+source activate monai-auto3dseg
+
+
+# Add the correct path to PYTHONPATH
+export MONAI_DATA_DIRECTORY=/home/ft42/NoMAISI/
+
+python -m scripts.infer_testV2_controlnet -c ./configs/config_maisi3d-rflow.json -e ./configs/infr_env_NoMAISI_DLCSD24_demo.json -t ./configs/infr_config_NoMAISI_controlnet.json
