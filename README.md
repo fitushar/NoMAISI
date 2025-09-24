@@ -111,6 +111,58 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
 </p>
 
 
+# Inference Guide
+1. [Project Structure](###project-structure)
+2. [Configuration Files](###configuration-files)
+
+### 📁 Project Structure
+
+```
+NoMAISI/
+├── configs/                          # Configuration files
+│   ├── config_maisi3d-rflow.json    # Main model configuration
+│   ├── infr_env_NoMAISI_DLCSD24_demo.json  # Environment settings
+│   └── infr_config_NoMAISI_controlnet.json # ControlNet inference config
+├── scripts/                          # Python inference scripts
+│   ├── infer_testV2_controlnet.py   # Main inference script
+│   ├── infer_controlnet.py          # ControlNet inference
+│   └── utils.py                     # Utility functions
+├── models/                           # Pre-trained model weights
+├── data/                            # Input data directory
+├── outputs/                         # Generated results
+├── logs/                           # Execution logs
+└── inference.sub                   # SLURM job script
+```
+
+## ⚙️ Configuration Files
+#### 1. Main Model Configuration (`config_maisi3d-rflow.json`): Controls the core diffusion model parameters:
+- Model architecture settings; Sampling parameters; Image dimensions and spacing
+
+#### 2. Environment Configuration (`infr_env_NoMAISI_DLCSD24_demo.json`): Defines runtime environment
+- Data paths and directories; GPU settings; Memory allocation
+
+#### 3. ControlNet Configuration (`infr_config_NoMAISI_controlnet.json`): ControlNet-specific settings
+- Conditioning parameters; Generation controls; Output specifications
+
+## 🚀 Running Inference
+
+```bash
+cd /path/NoMAISI/
+# Create logs directory if it doesn't exist
+mkdir -p logs
+# Submit job to SLURM
+sbatch inference.sub
+```
+
+```bash
+# Run inference directly
+cd /path/NoMAISI/
+python -m scripts.infer_testV2_controlnet \
+    -c ./configs/config_maisi3d-rflow.json \
+    -e ./configs/infr_env_NoMAISI_DLCSD24_demo.json \
+    -t ./configs/infr_config_NoMAISI_controlnet.json
+```
+
 # Downstream Task:
 
 * **Cancer vs. No-Cancer Classification**
