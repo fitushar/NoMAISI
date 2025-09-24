@@ -117,6 +117,10 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
 1. [Project Structure](###project-structure)
 2. [Configuration Files](###configuration-files)
 
+### Model Weights
+Model weights are available upon request. Please email the authors: <tushar.ece@duke.edu>.
+
+
 ### 📁 Project Structure
 
 ```
@@ -137,6 +141,7 @@ NoMAISI/
 ```
 
 ## ⚙️ Configuration Files
+
 #### 1. Main Model Configuration (`config_maisi3d-rflow.json`): Controls the core diffusion model parameters:
 - Model architecture settings; Sampling parameters; Image dimensions and spacing
 
