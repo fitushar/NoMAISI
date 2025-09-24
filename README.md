@@ -30,7 +30,11 @@ The overall pipeline for organ, body, and nodule segmentation with alignment is 
 
 **Workflow** for constructing the **NoMAISI** development dataset. The pipeline includes **(1)** organ segmentation using AI models, **(2)** body segmentation with algorithmic methods, **(3)** nodule segmentation through AI-assisted and ML-based refinement, and **(4)** segmentation alignment to integrate organs, body, and nodules segmentations into anatomically consistent volumes.
 
+<p align="center">
+  <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/NoMAISI_train_and_infer.png" alt="NoMAISI_train_and_infer"/>
+</p>
 
+**Overview** of our flow-based latent diffusion model with ControlNet conditioning for AI-based CT generation. The pipeline consists of three stages: **(top) Pretrained VAE** for image compression, where CT images are encoded into latent features using a frozen VAE; **(middle)** Model fine-tuning, where a **Rectified Flow ODE sampler**, conditioned on segmentation masks and voxel spacing through a **fine-tuned ControlNet**, predicts velocity fields in latent space and is optimized with a region-specific contrastive loss emphasizing ROI sensitivity and background consistency; and **(bottom) Inference**, where segmentation masks and voxel spacing guide latent sampling along the ODE trajectory to obtain a clean latent representation, which is then decoded by the VAE into full-resolution AI-generated CT images conditioned by body and lesion masks.
 
 
 ## 📊 Dataset Composition
@@ -105,3 +109,10 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
 <p align="center">
   <img src="https://github.com/fitushar/NoMAISI/blob/main/doc/images/DLCS_1453_ann0_slice204_triple.png" alt="Comparison of MAISI-V2 vs NoMAISI on lung CT with input masks" width="1000">
 </p>
+
+# Acknowledgements
+
+We gratefully acknowledge the open-source projects that directly informed this repository: the [MAISI tutorial](https://github.com/Project-MONAI/tutorials/tree/main/generation/maisi) from the Project MONAI tutorials, the broader [Project MONAI ecosystem](https://github.com/Project-MONAI),
+our related benchmark repo [AI in Lung Health – Benchmarking](https://github.com/fitushar/AI-in-Lung-Health-Benchmarking-Detection-and-Diagnostic-Models-Across-Multiple-CT-Scan-Datasets), 
+and our companion toolkits [PiNS – Point-driven Nodule Segmentation](https://github.com/fitushar/PiNS)
+ and [CaNA – Context-Aware Nodule Augmentation](https://github.com/fitushar/CaNA). We thank these communities and contributors for their exceptional open-source efforts. If you use our models or code, please also consider citing these works (alongside this repository) to acknowledge their contributions.
