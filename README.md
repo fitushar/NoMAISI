@@ -137,7 +137,7 @@ The dashed diagonal line denotes **parity (y = x)**, where AI-generated fidelity
 **Takeaways**
 - **AI-generated nodules improve data-efficiency:** at **low clinical fractions (50%→10%)**, *Clinical + AI-gen. (n%)* typically **matches or exceeds** clinical-only AUC.
 - **Bigger synthetic boosts (100%)** can help in some regimes but may underperform the matched *n%* mix depending on cohort → **ratio-balanced augmentation** is often safer.
-- Trends **generalize to external cohorts**, indicating **robustness** beyond the development data.
+- Trends **generalize to external cohorts**, indicating **usability** beyond the development data.
 
 ---
 
@@ -151,3 +151,10 @@ We gratefully acknowledge the open-source projects that directly informed this r
 our related benchmark repo [AI in Lung Health – Benchmarking](https://github.com/fitushar/AI-in-Lung-Health-Benchmarking-Detection-and-Diagnostic-Models-Across-Multiple-CT-Scan-Datasets), 
 and our companion toolkits [PiNS – Point-driven Nodule Segmentation](https://github.com/fitushar/PiNS)
  and [CaNA – Context-Aware Nodule Augmentation](https://github.com/fitushar/CaNA). We thank these communities and contributors for their exceptional open-source efforts. If you use our models or code, please also consider citing these works (alongside this repository) to acknowledge their contributions.
+
+# References
+
+* [1] [MAISI-V2; Guo, Pengfei, et al.(2025)](https://arxiv.org/abs/2508.05772)
+* [2] [AI in Lung Health- Benchmarking; Tushar et al.(2024)](https://arxiv.org/abs/2405.04605)
+* [3] [SYN-LUNGS; Tushar et al.(2025)](https://arxiv.org/abs/2502.21187)
+
